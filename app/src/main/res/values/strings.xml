@@ -3,4 +3,7 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="title_sub">Sub</string>
+    <string name="home_button_transition">Move to Dashboard</string>
+    <string name="dashboard_button_transition">Move to Activity</string>
 </resources>
