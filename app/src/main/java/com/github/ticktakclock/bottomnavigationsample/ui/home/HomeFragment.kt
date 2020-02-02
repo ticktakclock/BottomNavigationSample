@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -30,7 +31,13 @@ class HomeFragment : Fragment() {
         })
         val button: Button = root.findViewById(R.id.button)
         button.setOnClickListener {
-            findNavController().navigate(R.id.action_navigation_home_to_navigation_dashboard)
+            val editText: EditText = root.findViewById(R.id.editText)
+            val textValue = editText.text.toString()
+            // 以前はリソースIDを直接指定していたが今回は引数を含めたDestinationを指定
+            val destination =
+                HomeFragmentDirections.actionNavigationHomeToNavigationDashboard(textValue)
+            findNavController().navigate(destination)
+//            findNavController().navigate(R.id.action_navigation_home_to_navigation_dashboard)
         }
         return root
     }
